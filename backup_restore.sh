@@ -1,27 +1,42 @@
-### Create dbs (already in the sql file)
-mysql -e 'CREATE DATABASE db104_1;'
-mysql -e 'CREATE DATABASE db104_2;'
-mysql -e 'CREATE DATABASE db104_3;'
+# This script will:
+# - Create all databases (number choosed with the db_number variable)
+# - Insert datas in databases
+# - Dump databases
+# - Recreate dbs
+# - Restore dbs
+# - Delete all files  (can be set with the delete_files variable)
 
-### Insert data into databases
-mysql -u root -p db104_1 < ./databases/db104_1.sql
-mysql -u root -p db104_2 < ./databases/db104_2.sql
-mysql -u root -p db104_3 < ./databases/db104_3.sql
+user="root"
+current_date=`date +%F_%H%M%S`
+db_number="1 2 3"
+delete_files="true"
 
-### Dump databases
-mysqldump -u root -p db104_1 > dump_db104_1.sql
-mysqldump -u root -p db104_2 > dump_db104_2.sql
-mysqldump -u root -p db104_3 > dump_db104_3.sql
+for i in $db_numbers;do
+  # Recreate databases (this code is commented in the sql file)
+  mysql -u $user -e "DROP DATABASE IF EXISTS db104_$i;"
+  mysql -u $user -e "CREATE DATABASE IF NOT EXISTS db104_$i;"
+  
+  # Create sql files (copy template)
+  cp ./databases/db104_template.sql ./databases/db104_$i.sql
 
-### Recreate dbs (already in the dump file)
-mysql -e 'CREATE DATABASE db104_1;'
-mysql -e 'DROP DATABASE db104_1;'
-mysql -e 'CREATE DATABASE db104_2;'
-mysql -e 'DROP DATABASE db104_2;'
-mysql -e 'CREATE DATABASE db104_3;'
-mysql -e 'DROP DATABASE db104_3;'
+  # Insert data into databases
+  mysql -u $user -p db104_$i < ./databases/db104_$i.sql
+  
+  # Dump databases
+  mysqldump -u $user -p db104_$i > ./databases/dumps/dump_db104_$i_$current_date.sql
+  
+  # Recreate dbs (already in the dump file)
+  mysql -u $user -e "CREATE DATABASE db104_$i;"
+  mysql -u $user -e "DROP DATABASE db104_$i;"
+  
+  ### Restore databases
+  mysql -u $user -p db104_$i < dump_db104_$i_$current_date.sql
+done
 
-### Restore databases
-mysql -u root -p db104_1 < dump_db104_1.sql
-mysql -u root -p db104_2 < dump_db104_2.sql
-mysql -u root -p db104_3 < dump_db104_3.sql
+# Delete all the files
+if [delete_files -eq "true"];then
+  for i in $db_numbers;do
+    rm ./databases/db104_$i.sql
+    rm ./databases/dumps/dump_db104_$i_$current_date.sql
+  done
+fi
