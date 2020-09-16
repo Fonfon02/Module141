@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # This script will:
 # - Create all databases (number choosed with the db_number variable)
 # - Insert datas in databases

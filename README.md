@@ -38,5 +38,5 @@ mysqldump -u $USER -p $DB
 mysqldump -u $USER -p $DB > $FILE.sql
 ```
 ## Scripts
-All the scripts in this repo use root as user and they log into databases with the (.my.cnf)[https://www.tecmint.com/connect-to-mysql-without-root-password/] file.
+All the scripts in this repo use root as user and they log into databases with the [.my.cnf](https://www.tecmint.com/connect-to-mysql-without-root-password/) file.
 So before using the scripts, be sure that you have this file working!
