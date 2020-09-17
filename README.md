@@ -1,42 +1,34 @@
 # Module 141
 
-## Changelog
+This repo contain our project for the module 141. It's the projetc of [divad1701](https://github.com/divad1701) and [Fonfon02](https://github.com/Fonfon02).
 
-### Semaine 1 
+## Prerequisite
+List of things to get before install:
+  - A Mariadb server with root access
+  - File [.my.cnf](https://www.tecmint.com/connect-to-mysql-without-root-password/) configured (in this tutorial we are going to use root account for scripts)
+    Example of .my.cnf file
+    ```bash
+    [mysql]
+    user=root
+    password=yourpwd
+  
+    [mysqldump]
+    user=root
+    password=yourpwd
+    ```
+## Installation 
+To install this project and use it you have to:
+  - Clone or import as Zip this project on local
+  - Decompress the project in this directory
+
+## Content
+This repo contain all the scripts asked for the Module 141. There's also database template files to do use the scripts
+
+## ChangeLog
+### Week 1 
   - Backup and restore a db
   - Backup and restore three dbs
   - Try blackhole and csv engine
 
-### Semaine 2
+### Week 2 
   - Do a cross join to crash the database
-
-## Commands list
-
-### Change the engine's table or set it at the creation
-~~~~sql
-ALTER TABLE $TABLE ENGINE = CSV;
-ALTER TABLE $TABLE ENGINE = BLACKHOLE;
-CREATE TABLE test(i INT, c CHAR(10)) ENGINE = CSV;
-CREATE TABLE test(i INT, c CHAR(10)) ENGINE = BLACKHOLE;
-~~~~
-
-### Mysql useful commands
-~~~~sql
-SHOW DATABASES;
-DROP DATABASE;
-USE $DB;
-SHOW TABLES;
-SELECT * FROM $TABLE;
-SHOW COLUMNS FROM $TABLE;
-SHOW INDEX FROM $TABLE;
-~~~~
-
-### Bash useful commands
-```bash
-mysql -e '$MYSQL_COMMAND'
-mysqldump -u $USER -p $DB
-mysqldump -u $USER -p $DB > $FILE.sql
-```
-## Scripts
-All the scripts in this repo use root as user and they log into databases with the [.my.cnf](https://www.tecmint.com/connect-to-mysql-without-root-password/) file.
-So before using the scripts, be sure that you have this file working!
