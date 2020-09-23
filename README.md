@@ -31,4 +31,7 @@ This repo contain all the scripts asked for the Module 141. There's also databas
   - Try blackhole and csv engine
 
 ### Week 2 
-  - Do a cross join to crash the database
+  - Creation of user
+  - Give privileges to the user 
+  - Test requests
+  - Revoke access to the user
