@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # This script will:
-# - Create all databases (number choosed with the db_number variable)
+# - Create all databases
 # - Insert datas in databases
 # - Dump databases
 # - Recreate dbs
 # - Restore dbs
-# - Delete all files  (can be set with the delete_files variable)
+# - Delete all files (can be set with the delete_files variable)
 
 user="root"
 delete_files="true"

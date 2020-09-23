@@ -16,6 +16,9 @@ SHOW TABLES;
 SELECT * FROM $TABLE;
 SHOW COLUMNS FROM $TABLE;
 SHOW INDEX FROM $TABLE;
+SELECT User,Host FROM mysql.user;
+SHOW GRANTS FOR '$USER'@'localhost';
+SHOW GRANTS FOR user;
 ~~~~
 
 ## Bash useful commands
