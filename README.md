@@ -35,3 +35,4 @@ This repo contain all the scripts asked for the Module 141. There's also databas
   - Give privileges to the user 
   - Test requests
   - Revoke access to the user
+  - Crash the db with cross join
