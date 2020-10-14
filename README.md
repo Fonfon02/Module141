@@ -36,6 +36,7 @@ List of things to get before install:
     ```
 ## Installation 
 ![alt text]( ./pictures/2.jpg "SQL meme 2")
+
 To install this project and use it you have to:
   - Clone or import as Zip this project on local
   - Decompress the project in this directory
