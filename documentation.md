@@ -8,10 +8,8 @@ To implement referential integrity, we use a foreign key. To create a foreign ke
 1. Both tables must work with the innoDB engine.
 2. The fields used must be indexed and under the same data type.
 
-Example: :
-In our database, we have a PC from a computer company. The referential integrity will prohibit to delete the company as long as there is a PC of this company in the database. And in the same way, it will prohibit to create a PC of this company if it does not already exist in the database.
+Example:
 
-Example: :
 In our database, we have a customer order from a customer. The referential integrity will prohibit to delete the customer as long as there is a customer order of this customer in the database. And in the same way, it will prohibit to create a customer order from this customer if it does not already exist in the database.
 
 ![alt text]( ./pictures/example.png "Example referential integrity")

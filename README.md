@@ -8,8 +8,7 @@ This repo contain our project for the module 141. It's the projetc of [divad1701
 
 ## Prerequisite
 List of things to get before install:
-  - A Mariadb server with root access
-  ### [MariaDB installation](https://www.tecmint.com/connect-to-mysql-without-root-password/)
+  - A Mariadb server with root access, [MariaDB installation](https://www.tecmint.com/connect-to-mysql-without-root-password/)
     ```bash
     # Update package index
     sudo apt update
