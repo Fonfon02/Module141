@@ -19,6 +19,8 @@ SHOW INDEX FROM $TABLE;
 SELECT User,Host FROM mysql.user;
 SHOW GRANTS FOR '$USER'@'localhost';
 SHOW GRANTS FOR user;
+SET autocommit = ON;
+SET autocommit = OFF;
 ~~~~
 
 ## Bash useful commands
