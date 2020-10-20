@@ -20,7 +20,8 @@ Links:
   - https://www.sqlshack.com/wp-content/uploads/2020/02/foreign-key-data-matching-illustration.png
 
 ## Commands list
-### Change the engine's table or set it at the creation
+### Mysql useful commands
+#### Change the engine's table or set it at the creation
 ~~~~sql
 ALTER TABLE $TABLE ENGINE = CSV;
 ALTER TABLE $TABLE ENGINE = BLACKHOLE;
@@ -28,20 +29,34 @@ CREATE TABLE test(i INT, c CHAR(10)) ENGINE = CSV;
 CREATE TABLE test(i INT, c CHAR(10)) ENGINE = BLACKHOLE;
 ~~~~
 
-### Mysql useful commands
+#### Show infos about databases and tables
 ~~~~sql
 SHOW DATABASES;
 DROP DATABASE;
 USE $DB;
-SHOW TABLES;
 SELECT * FROM $TABLE;
 SHOW COLUMNS FROM $TABLE;
 SHOW INDEX FROM $TABLE;
+~~~~
+
+#### Show infos about user
+~~~~sql
 SELECT User,Host FROM mysql.user;
 SHOW GRANTS FOR '$USER'@'localhost';
-SHOW GRANTS FOR user;
+~~~~
+
+#### Transactions commands
+~~~~sql
 SET autocommit = ON;
 SET autocommit = OFF;
+~~~~
+
+#### Get information schema infos
+~~~~sql
+SELECT TABLE_NAME, COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS;
+SHOW TABLE STATUS where name like '$TABLE';
+SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_COLLATION FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = '$TABLE';
+SELECT * FROM INFORMATION_SCHEMA.STATISTICS WHERE TABLE_NAME = '$TABLE';
 ~~~~
 
 ### Bash useful commands

@@ -36,12 +36,12 @@ List of things to get before install:
 ## Installation 
 ![alt text]( ./pictures/2.jpg "SQL meme 2")
 
-To install this project and use it you have to:
+To use this repo you have to:
   - Clone or import as Zip this project on local
   - Decompress the project in this directory
 
 ## Content
-This repo contain all the scripts asked for the Module 141. There's also database template files to do use the scripts
+This repo contain all the scripts asked for the Module 141. There's also database template files to use the scripts.
 
 ## ChangeLog
 ### Week 1 
