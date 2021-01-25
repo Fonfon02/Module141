@@ -1,5 +1,39 @@
 # Documentation
 
+## Install PostgreSql
+```bash
+# Update package index
+sudo apt update
+
+# Install packages
+sudo apt install postgresql postgresql-contrib
+
+# Test to login with postgres' user
+sudo -i -u postgres
+exit
+```
+If everything is fine, we can create a new user (or role)
+```bash
+# Create a new user on postgres
+sudo -u postgres createuser --interactive
+Enter name of role to add: test
+Shall the new role be a superuser? (y/n) y
+
+# Create a new user on your linux too
+sudo adduser test
+
+# Create a new database
+sudo -u postgres createdb test # Use the same name for your db and for your user. By default a user will attempt to connect to a db who is called like him.
+
+# Test your user and your db
+sudo -i -u test
+psql
+psql -d postgres # Or you can specify a database to connect.
+```
+
+Links:
+  - https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
+
 ## Referential integrity
 Referential integrity is a state in which each information in a table A is linked to another in a table B. It allows the consistency of the database content.
 
