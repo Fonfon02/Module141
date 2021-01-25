@@ -8,20 +8,10 @@ This repo contain our project for the module 141. It's the projetc of [divad1701
 
 ## Prerequisite
 List of things to get before install:
-  - A Mariadb server with root access, [MariaDB installation](https://www.tecmint.com/connect-to-mysql-without-root-password/)
-    ```bash
-    # Update package index
-    sudo apt update
-    
-    # Install MariaDB
-    sudo apt install mariadb-server
-    
-    # Check if MariaDB is installed and running
-    systemctl status mariadb
-    
-    # Run the sudo secure installation (not very useful in a lab like this one)
-    sudo mysql_secure_installation
-    ```
+  - A Mariadb server with root access:
+    - To install it check the [official MariaDB documentation](https://www.tecmint.com/connect-to-mysql-without-root-password/)
+    - Or check our installation guide under documentation.md
+
   - File [.my.cnf](https://www.tecmint.com/connect-to-mysql-without-root-password/) configured (in this tutorial we are going to use root account for scripts)
     Example of .my.cnf file
     ```bash
