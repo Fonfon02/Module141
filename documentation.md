@@ -55,7 +55,7 @@ Links:
 
 ## Phpmyadmin vs Adminer
 ### What are Phpmyadmin and Adminer?
-They are both web administration tools for databases. They are used to manage databases, are written in PHP and can be installed on the server and accessed from a web browser.
+They are both web administration tools for databases. They are used to manage databases, are written in PHP and can be installed on a server and accessed from a web browser.
 
 They provide a GUI to manage databases.
 
