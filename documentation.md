@@ -1,5 +1,20 @@
 # Documentation
 
+## Install MariaDB
+```bash
+# Update package index
+sudo apt update
+
+# Install MariaDB
+sudo apt install mariadb-server
+
+# Check if MariaDB is installed and running
+systemctl status mariadb
+
+# Run the sudo secure installation (not very useful in a lab like this one)
+sudo mysql_secure_installation
+```
+
 ## Install PostgreSql
 ```bash
 # Update package index
@@ -33,6 +48,33 @@ psql -d postgres # Or you can specify a database to connect.
 
 Links:
   - https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
+
+## MariaDb vs MySql 
+
+## PostgreSql vs MySql
+
+## Phpmyadmin vs Adminer
+### What are Phpmyadmin and Adminer?
+They are both web administration tools for databases. They are used to manage databases, are written in PHP and can be installed on a server and accessed from a web browser.
+
+They provide a GUI to manage databases.
+
+### Comparison 
+I will just compare the points I find (personally) important. I'll let you do your own research and your own opinion.
+
+Phpmyadmin's Advantages:
+  - More known and used than Adminer, it's easier to get help with it (with forums for example)
+  - There are more possibilities to export databases (LaTex, MediaWiki Table, ...)
+
+Adminer's Advantages:
+  - Supports more databases types (MySql, SQLite, PostgreSql, MSSql, Oracle db)
+  - The install is lighter than Phpmyadmin and is only found in a single file
+  - No need to configure it, it'll just work
+
+Links:
+  - https://www.adminer.org/en/phpmyadmin/
+    - !! Be careful about this link because that's a critic about adminer and phpmyadmin but made by the adminer devloppers.
+  - https://www.wpoven.com/blog/adminer-vs-phpmyadmin/
 
 ## Referential integrity
 Referential integrity is a state in which each information in a table A is linked to another in a table B. It allows the consistency of the database content.
