@@ -2,7 +2,7 @@
 
 ## Referential integrity
 
-![alt text]( ./pictures/1.png "SQL meme 1")
+![alt text]( ./pictures/3.jpg "SQL meme 1")
 
 This repo contain our project for the module 141. It's the project of [David Araujo](https://github.com/divad1701) and [Colin Fontanellaz](https://github.com/Fonfon02).
 
@@ -36,9 +36,10 @@ This repo contains all the work asked for the Module 141:
   - Database template file
   - Documentation
 
+![alt text]( ./pictures/1.png "SQL meme 1")
+
 ## Topics covered
-- Backup and restore a DB
-- Backup and restore three DBs
+- Backup and restore DBs
 - Try blackhole and csv engines
 - User creation
 - Give privileges to users 
@@ -48,4 +49,6 @@ This repo contains all the work asked for the Module 141:
 - Referential integrity, foreign keys, etc...
 - Install MariaDB
 - Install PostgreSql
+- Mysql versus Mariadb
+- Mysql versus Postgres
 - Phpmyadmin versus Adminer
