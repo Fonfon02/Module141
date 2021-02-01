@@ -46,12 +46,33 @@ psql
 psql -d postgres # Or you can specify a database to connect.
 ```
 
-Links:
+### Links
   - https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
 
 ## MariaDb vs MySql 
+MariaDb is a fork of MySql but there's some differences between them.
+
+### Comparison 
+  - Mariadb is released under GPL, LGPL or BSD license. It's more opensource than MySql. 
+  - Mariadb have more storage engines.
+  - Mariadb has speed improvements.
+  - They manage thread pools in a different way.
+
+### Links
+  - https://kinsta.com/blog/mariadb-vs-mysql/
+  - https://mariadb.com/kb/en/mariadb-vs-mysql-features/
 
 ## PostgreSql vs MySql
+### Comparison 
+The main difference between Postgres and MySql is that the first is an object-relational database and the second a relational database.
+
+  - MySql is simpler, that's easy and fast to set up and it's very known.
+
+  - Postgres is a feature-rich database. Which means that it can handle very complex queries and big database. So, basically, it's more complicated than Mysql.
+
+### Links
+  - https://www.xplenty.com/blog/postgresql-vs-mysql-which-one-is-better-for-your-use-case/
+  - https://developer.okta.com/blog/2019/07/19/mysql-vs-postgres
 
 ## Phpmyadmin vs Adminer
 ### What are Phpmyadmin and Adminer?
@@ -71,7 +92,7 @@ Adminer's Advantages:
   - The install is lighter than Phpmyadmin and is only found in a single file
   - No need to configure it, it'll just work
 
-Links:
+### Links
   - https://www.adminer.org/en/phpmyadmin/
     - !! Be careful about this link because that's a critic about adminer and phpmyadmin but made by the adminer devloppers.
   - https://www.wpoven.com/blog/adminer-vs-phpmyadmin/
@@ -90,7 +111,7 @@ In our database, we have a customer order from a customer. The referential integ
 
 ![alt text]( ./pictures/example.png "Example referential integrity")
 
-Links:
+### Links
   - https://www.techrepublic.com/article/an-introduction-to-foreign-keys-and-referential-integrity-in-mysql/#:~:text=Referential%20integrity%20is%20an%20important,that%20make%20up%20the%20system.
   - https://fr.wikipedia.org/wiki/Intégrité_référentielle#:~:text=En%20informatique%2C%20et%20plus%20particulièrement,existe%20dans%20la%20table%20B.
   - https://www.sqlshack.com/wp-content/uploads/2020/02/foreign-key-data-matching-illustration.png
