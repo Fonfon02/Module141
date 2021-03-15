@@ -124,8 +124,91 @@ Adminer's Advantages:
     - !! Be careful about this link because that's a critic about adminer and phpmyadmin but made by the adminer devloppers.
   - https://www.wpoven.com/blog/adminer-vs-phpmyadmin/
 
-## Escape specials characters in Json
-There's several ways to escape specials char into json. You can use a website, or just use python for example.
+## Json
+### Generate Random Json
+To test the insert of json data in our DBs I used [JSONPlaceholder](https://jsonplaceholder.typicode.com). I made a simple script (cf. script folder) who ask the JSONPlaceholder API and return some random data for tests. Depending what you need you can choose between 6 type of data:
+  - Post
+    ~~~json
+    {
+        "userId": 1,
+        "id": 1,
+        "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+        "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+    }
+    ~~~
+  - Comments
+    ~~~json
+    {
+        "postId": 1,
+        "id": 1,
+        "name": "id labore ex et quam laborum",
+        "email": "Eliseo@gardner.biz",
+        "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+    }
+    ~~~
+  - Albums
+    ~~~json
+    {
+        "userId": 1,
+        "id": 1,
+        "title": "quidem molestiae enim"
+    }
+    ~~~
+  - Photos
+    ~~~json
+    {
+        "albumId": 1,
+        "id": 1,
+        "title": "accusamus beatae ad facilis cum similique qui sunt",
+        "url": "https://via.placeholder.com/600/92c952",
+        "thumbnailUrl": "https://via.placeholder.com/150/92c952"
+    }
+    ~~~
+  - Todos
+    ~~~json
+    {
+        "userId": 1,
+        "id": 1,
+        "title": "delectus aut autem",
+        "completed": false
+    }
+    ~~~
+  - Users
+    ~~~json
+    {
+        "id": 1,
+        "name": "Leanne Graham",
+        "username": "Bret",
+        "email": "Sincere@april.biz",
+        "address": {
+            "street": "Kulas Light",
+            "suite": "Apt. 556",
+            "city": "Gwenborough",
+            "zipcode": "92998-3874",
+            "geo": {
+                "lat": "-37.3159",
+                "lng": "81.1496"
+            }
+        },
+        "phone": "1-770-736-8031 x56442",
+        "website": "hildegard.org",
+        "company": {
+            "name": "Romaguera-Crona",
+            "catchPhrase": "Multi-layered client-server neural-net",
+            "bs": "harness real-time e-markets"
+        }
+    }
+    ~~~
+
+
+Obviously you can use a website to create random data too, I found one who is cool and simple to use. Just check the links below. If you have to create only one or two fake data it will be practical.
+
+### Links
+  - https://www.json-generator.com
+  - https://jsonplaceholder.typicode.com
+
+### Escape specials characters in Json
+There's several ways to escape specials char into json. You can use a [website](https://www.freeformatter.com/json-escape.html), or just use python for example.
 
 I found the project [escapejson](https://pypi.org/project/escapejson/) for python. The goal of this project is to avoid cross-site scripting attack. So it's mainly used with Django,anyway, you can use it to insert data with json formata.
 
@@ -235,4 +318,3 @@ db.testcollection.find({$or:[{"age": 21},{"_id": 846}]}).pretty()
 
 ### Links
   - https://www.tutorialspoint.com/mongodb/
-  - https://www.json-generator.com
