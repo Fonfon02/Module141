@@ -124,6 +124,21 @@ Adminer's Advantages:
     - !! Be careful about this link because that's a critic about adminer and phpmyadmin but made by the adminer devloppers.
   - https://www.wpoven.com/blog/adminer-vs-phpmyadmin/
 
+## Escape specials characters in Json
+There's several ways to escape specials char into json. You can use a website, or just use python for example.
+
+I found the project [escapejson](https://pypi.org/project/escapejson/) for python. The goal of this project is to avoid cross-site scripting attack. So it's mainly used with Django,anyway, you can use it to insert data with json formata.
+
+Obviously other languages have methods to get the same result, like powershell for example:
+~~~~powershell
+$i = "Notepad++"
+$i_escaped = [Regex]::Escape($i)
+~~~~
+
+### Links
+  - https://www.freeformatter.com/json-escape.html
+  - https://pypi.org/project/escapejson/
+
 ## Referential integrity
 Referential integrity is a state in which each information in a table A is linked to another in a table B. It allows the consistency of the database content.
 
@@ -189,3 +204,35 @@ mysql -e '$MYSQL_COMMAND'
 mysqldump -u $USER -p $DB
 mysqldump -u $USER -p $DB > $FILE.sql
 ```
+### MongoDB useful commands
+#### Create, list, drop DB
+~~~~sql
+use test
+db
+show dbs
+db.dropDatabase()
+~~~~
+
+#### Create, list, insert, remove, drop Collection
+~~~~sql
+use test
+db.createCollection("testcollection")
+show collections
+db.testcollection.insert(data)
+db.testcollection.insertOne(data)
+db.testcollection.insertMany(data)
+db.testcollection.remove({"gender":"male"})
+db.testcollection.drop()
+~~~~
+
+#### Queries
+~~~~sql
+db.testcollection.find().pretty()
+db.testcollection.findOne({"_id": 846})
+db.testcollection.find({$and:[{"gender":"male"},{"_id": 846}]}).pretty()
+db.testcollection.find({$or:[{"age": 21},{"_id": 846}]}).pretty()
+~~~~
+
+### Links
+  - https://www.tutorialspoint.com/mongodb/
+  - https://www.json-generator.com

@@ -47,8 +47,10 @@ This repo contains all the work asked for the Module 141:
 - Test requests
 - Crash the db with cross join
 - Referential integrity, foreign keys, etc...
+- Escape specials characters
 - Install MariaDB
 - Install PostgreSql
+- Install MongoDB
 - Mysql versus Mariadb
 - Mysql versus Postgres
 - Phpmyadmin versus Adminer
