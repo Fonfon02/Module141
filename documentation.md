@@ -49,6 +49,33 @@ psql -d postgres # Or you can specify a database to connect.
 ### Links
   - https://www.digitalocean.com/community/tutorials/how-to-install-postgresql-on-ubuntu-20-04-quickstart
 
+## Install MongoDB
+```bash
+# Install gnupg
+sudo apt install gnupg
+
+# Import the MongoDB public GPG Key
+wget -qO - https://www.mongodb.org/static/pgp/server-4.4.asc | sudo apt-key add -
+
+# Create list file for MongoDB
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/4.4 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.4.list
+
+# Update package index and install mongodb-org
+sudo apt update
+sudo apt install mongodb-org
+
+# Start and enable at boot MongoDB
+sudo systemctl start mongod
+sudo systemctl enable mongod
+
+# Test your installation
+sudo systemctl status mongod
+mongo
+```
+
+### Links
+  - https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+
 ## MariaDb vs MySql 
 MariaDb is a fork of MySql but there's some differences between them.
 
