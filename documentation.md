@@ -222,6 +222,36 @@ $i_escaped = [Regex]::Escape($i)
   - https://www.freeformatter.com/json-escape.html
   - https://pypi.org/project/escapejson/
 
+## Insert LaTeX in MongoDB database
+To do this I just created a json file with the data:
+~~~json
+[
+{
+    "_id" : 1,
+    "data": "\\begin{document} *************************************************************************************** QUESTION : \\question[3] ATTENTION~: La source de tension $U_1$ est inversée. Quelles sont les conditions pour que les deux diodes soient conductrices~?  ******************************************************************************************** REPONSE : \\begin{solution} \\begin{circuitikz}[european,thick,voltage shift=0.3] %    \\draw[OMdeYLB] (-5,-5) grid (10,10); \\coordinate (I) at (-5,4); \\coordinate (J) at (-4,4); \\coordinate (K) at (-3,0); \\coordinate (L) at (0,0); \\node (amb) [right] at (6,2.5) {$\\textbf{B}$}; \\draw (6,2.5) to[Do, v_<=$U_{R_{CB}}$,l^=$R_{CB}$,o-o] (6,5) node[right] {$\\textbf{C}$}; \\draw (6,2.5) to[Do, l_=$R_{BE}$,o-o] (6,0) node[right] {$\\textbf{E}$}; \\draw (4,2.5) to[short, -o] (6,2.5); \\node[above] at (4,2.5) {$\\textbf{B}$}; \\draw (4,2.5) node[ocirc]{}; \\draw (0,0) to[short, -o] (6,0); \\draw ([xshift=0pt,yshift=0pt]8,-0.5)  to [open, v_<=$U_{CE}$] ([xshift=0pt,yshift=0pt]8,5.5); % Tension U BE \\draw ([xshift=-7pt,yshift=8pt]4,2)  to [open, v_>=$U_{BE}$] ([xshift=-7pt,yshift=-3pt]5.5,0); \\draw (0,2.5) node[yshift=-20pt,right]{$+$} to[V] (0,0) node[yshift=20pt,right]{$-$}; \\draw ([xshift=-5pt,yshift=0pt]-0.5,0) to [open, v^<=$U_{1}$] ([xshift=-5pt,yshift=0pt]-0.5,2.5); \\ctikzset{current/distance = -1.1} \\draw (0,2.5) to[R, v_>=$U_{R_{B}}$,l^=$R_{B}$,i=$I_B$,-o] (4,2.5) node[right] {$\\textbf{}$}; \\end{circuitikz} \\end{solution} \\end{document}"
+}
+]
+~~~
+
+And I just had to import it in MongoDB:
+```bash
+mongoimport --jsonArray --db test --collection latex --file latex.json
+# Obviously db "test" and collection "latex" have to exist in your MongoDB instance
+```
+
+By the way, to solve issue about the backslash chararacters during the import, I just use this vim command:
+```
+:%s/\\/\\\\/g
+```
+
+It basically escapes backslashes with backslashes.
+
+![alt text]( ./pictures/backslashes.png "Backslash meme")
+
+### Links
+  - https://stackoverflow.com/questions/19441228/insert-json-file-into-mongodb 
+  - https://xkcd.com/1638/
+
 ## Referential integrity
 Referential integrity is a state in which each information in a table A is linked to another in a table B. It allows the consistency of the database content.
 

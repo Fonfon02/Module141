@@ -47,6 +47,7 @@ This repo contains all the work asked for the Module 141:
 - Test requests
 - Crash the db with cross join
 - Referential integrity, foreign keys, etc...
+- Create Json fake data
 - Escape specials characters
 - Install MariaDB
 - Install PostgreSql
@@ -54,3 +55,4 @@ This repo contains all the work asked for the Module 141:
 - Mysql versus Mariadb
 - Mysql versus Postgres
 - Phpmyadmin versus Adminer
+- LaTeX in MongoDB
