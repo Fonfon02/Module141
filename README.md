@@ -166,9 +166,7 @@ See the [open issues](https://github.com/Fonfon02/Module141/issues) for a list o
 <!-- DISCLAIMER -->
 ## Disclaimer
 
-:warning:
-
-A great part of our scripts and examples use the **root** account. Obviously this is not a good practice in a production system, we only use it because all this project is a test and because it's simplier too.
+:warning: A great part of our scripts and examples use the **root** account. Obviously this is not a good practice in a production system, we only use it because all this project is a test and because it's simplier too.
 
 
 
@@ -184,6 +182,8 @@ Project Link: [https://github.com/Fonfon02/Module141](https://github.com/Fonfon0
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+<!-- Logo Author -->
+<!-- https://www.flaticon.com/authors/phatplus -->
 [contributors-shield]: https://img.shields.io/github/contributors/Fonfon02/Module141.svg?style=for-the-badge
 [contributors-url]: https://github.com/Fonfon02/Module141/graphs/contributors
 [issues-shield]: https://img.shields.io/github/issues/Fonfon02/Module141.svg?style=for-the-badge
