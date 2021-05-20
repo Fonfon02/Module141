@@ -27,7 +27,7 @@
   <h3 align="center">Module 141</h3>
 
   <p align="center">
-    Repo who contains files for the "Module141"
+    Repo who contains files for the "Module 141"
     <br />
     <a href="https://github.com/Fonfon02/Module141/blob/master/documentation.md"><strong>Explore the documentation »</strong></a>
     <br />
