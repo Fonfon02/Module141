@@ -131,19 +131,7 @@ CREATE TABLE `t_fonction` (
 --
 
 INSERT INTO `t_fonction` (`id_fonction`, `Fonction`) VALUES
-(7, 'Air Pressure'),
-(5, 'Air Temperature'),
-(9, 'AMS 2000'),
-(6, 'Dew Point'),
-(11, 'GFS 3000 - Direct'),
-(10, 'GFS 3000 - LON'),
-(13, 'Heater / Pump'),
-(1, 'Precipitation KNI'),
-(2, 'Precipitation WMO'),
-(12, 'RCM500NT'),
-(4, 'Relative Humidity'),
-(3, 'Visibility'),
-(8, 'Wind (Optional)');
+(8, 'test');
 
 -- --------------------------------------------------------
 
@@ -163,19 +151,7 @@ CREATE TABLE `t_sonde` (
 --
 
 INSERT INTO `t_sonde` (`id_sonde`, `Nom`, `NrItem`, `Prix`) VALUES
-(1, 'NI/SH 3000 ', 5100004805, '700'),
-(2, 'NI/SH 3000 LON', 5100004815, '650'),
-(3, 'NI/SH 2000 ', 5100004810, '550'),
-(4, 'PV', 5100004825, '250'),
-(7, 'RH', 5100004830, '650'),
-(8, 'PV-AP', 5100004850, '700'),
-(9, 'PV-RH', 5100004855, '820'),
-(10, 'PV-RH-AP', 5100004860, '860'),
-(11, 'P', 5100004905, '450'),
-(12, 'P-AP', 5100004925, '350'),
-(13, 'P-RH', 5100004930, '470'),
-(14, 'P-RH-AP', 5100004935, '510'),
-(15, 'RH-AP', 5100005025, '480');
+(15, 'AB-CD', 5804008029, '481');
 
 --
 -- Index pour les tables exportées
