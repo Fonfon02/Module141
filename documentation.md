@@ -124,7 +124,91 @@ Adminer's Advantages:
     - !! Be careful about this link because that's a critic about adminer and phpmyadmin but made by the adminer devloppers.
   - https://www.wpoven.com/blog/adminer-vs-phpmyadmin/
 
+## Transctions
+A transaction is the propagation of changes to the database. For example, if CRUD from a table, you are performing a transaction on that table. It is important to control these transactions to ensure data integrity and to handle database errors.
+
+In practice, you group several SQL queries and execute them all together in one transaction.
+
+### Properties
+**ACID**
+  - Atomicity: makes sure that all operations in the request are completed successfully. If not, the transaction is aborted at the error level and all previous operations are rolled back.
+  - Consistency: ensures that the database changes state correctly on a successfully committed transaction.
+  - Isolation: allows transactions to operate independently of each other and transparently.
+  - Durability: ensures that the result of a committed transaction persists in the event of a system failure.
+
+### Commands
+Here you can find the main commands to control your transactions.
+
+- Start a transaction
+~~~~sql
+BEGIN;
+~~~~
+- Save the transaction into the db
+~~~~sql
+COMMIT;
+~~~~
+- Cancel the changes
+~~~~sql
+ROLLBACK;
+~~~~
+- Create a snapshot between your queries in which to roll back
+~~~~sql
+SAVEPOINT nameofyourfsave;
+ROLLBACK TO nameofyourfsave;
+~~~~
+
+## Triggers
+In SQL, a TRIGGER is a user-defined SQL command that is automatically called during an INSERT, DELETE or UPDATE operation. The trigger code is associated with a table and is destroyed once the table is deleted. You can specify a time when the action is triggered and define whether it will be activated BEFORE or AFTER the event defined in the database.
+
+### Command Examples
+This example block insertion of a new user named maccaud
+~~~~sql
+DELIMITER //
+CREATE TRIGGER test_trigger
+BEFORE INSERT
+ON test_table
+FOR EACH ROW
+IF NEW.username=maccaud THEN
+SIGNAL SQLSTATE '45000'
+SET MESSAGE_TEXT = 'Unauthorized username.';
+END IF//
+DELIMITER ;
+~~~~
+This next example will add a tracking information to show that a user has been created
+~~~~sql
+DELIMITER //
+CREATE TRIGGER test_trigger2
+AFTER INSERT
+ON test_table
+FOR EACH ROW
+Insert into test_table_tracking(id_user,information) VALUES(NEW.id_user, 'NEW USER CREATED')//
+DELIMITER ;
+~~~~
+
+## Views
+In SQL, a VIEW is a virtual table based on the result of an SQL statement.
+
+A view contains rows and columns, like a real table. The fields in a view are fields from one or more real tables in the database.
+
+A view is created with the CREATE VIEW statement. 
+
+### Example
+This VIEW will display all the users that use french in their interface in a theoretical database
+~~~~sql
+CREATE VIEW [French Users] AS
+SELECT username
+FROM test_table
+WHERE interface_language = 'French';
+~~~~
+
 ## Json
+### Definition
+JSON stands for **J**ava**S**cript **O**bject **N**otation.
+It allows to represent structured information as XML does for example.
+It is a lightweight format for storing and moving data.
+It is often used when data is sent from a server to a web page.
+Interesting fact, JSON is a data exchange format. Therefore, the RFC does not allow comments (which are by nature metadata). Obviously, there are many possibilities to add them in a sneaky way.
+
 ### Generate Random Json
 To test the insert of json data in our DBs I used [JSONPlaceholder](https://jsonplaceholder.typicode.com). I made a simple script (cf. script folder) who ask the JSONPlaceholder API and return some random data for tests. Depending what you need you can choose between 6 type of data:
   - Post
