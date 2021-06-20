@@ -166,7 +166,7 @@ This example block insertion of a new user named maccaud
 DELIMITER //
 CREATE TRIGGER test_trigger
 BEFORE INSERT
-ON test_table
+ON t_test
 FOR EACH ROW
 IF NEW.username=maccaud THEN
 SIGNAL SQLSTATE '45000'
@@ -179,9 +179,9 @@ This next example will add a tracking information to show that a user has been c
 DELIMITER //
 CREATE TRIGGER test_trigger2
 AFTER INSERT
-ON test_table
+ON t_test
 FOR EACH ROW
-Insert into test_table_tracking(id_user,information) VALUES(NEW.id_user, 'NEW USER CREATED')//
+Insert into t_test_tracking(id_user,information) VALUES(NEW.id_user, 'NEW USER CREATED')//
 DELIMITER ;
 ~~~~
 
@@ -197,7 +197,7 @@ This VIEW will display all the users that use french in their interface in a the
 ~~~~sql
 CREATE VIEW [French Users] AS
 SELECT username
-FROM test_table
+FROM t_test
 WHERE interface_language = 'French';
 ~~~~
 
