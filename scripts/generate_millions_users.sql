@@ -1,4 +1,4 @@
--- Little sql script that create one million of users, use at your own risk, it's juste gonna be long, very long.
+-- Little sql script that create one million of users, use at your own risk, it's just gonna take a long time, a very long time.
 BEGIN;
 -- Every users will have the same common base "epsic" 
 SELECT 'CREATE USER epsic' || id 
