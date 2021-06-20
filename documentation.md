@@ -124,7 +124,7 @@ Adminer's Advantages:
     - !! Be careful about this link because that's a critic about adminer and phpmyadmin but made by the adminer devloppers.
   - https://www.wpoven.com/blog/adminer-vs-phpmyadmin/
 
-## Transctions
+## Transactions
 A transaction is the propagation of changes to the database. For example, if CRUD from a table, you are performing a transaction on that table. It is important to control these transactions to ensure data integrity and to handle database errors.
 
 In practice, you group several SQL queries and execute them all together in one transaction.
@@ -202,7 +202,6 @@ WHERE interface_language = 'French';
 ~~~~
 
 ## Json
-### Definition
 JSON stands for **J**ava**S**cript **O**bject **N**otation.
 It allows to represent structured information as XML does for example.
 It is a lightweight format for storing and moving data.
