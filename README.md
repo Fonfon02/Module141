@@ -140,8 +140,6 @@ Download this project as Zip on your local machine and decompress it
 - [User creation](scripts/user_privileges.sh)
 - [User give privileges](scripts/user_privileges.sh)
 - [User revoke access](scripts/user_privileges.sh)
-- [Test requests]()
-- [Crash the db with cross join]()
 - [Install MariaDB](documentation.md#install-mariadb)
 - [Install PostgreSql](documentation.md#install-postgresql)
 - [Install MongoDB](documentation.md#install-mongodb)
